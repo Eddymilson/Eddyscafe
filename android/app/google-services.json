@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "153575110904",
+    "project_id": "eddycafe-8d9d5",
+    "storage_bucket": "eddycafe-8d9d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153575110904:android:c632d91a97ba8462c1230d",
+        "android_client_info": {
+          "package_name": "com.mycompany.eddyscafe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDHNYlnApiIeTiH2ZjFXIUD9e6J1h76NA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
