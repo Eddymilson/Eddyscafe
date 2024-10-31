@@ -8,7 +8,7 @@ Future initFirebase() async {
             apiKey: "AIzaSyC31Hmu1P-s2iEzCKIUqt-wYPCLd2Ebb6c",
             authDomain: "eddycafe-8d9d5.firebaseapp.com",
             projectId: "eddycafe-8d9d5",
-            storageBucket: "eddycafe-8d9d5.appspot.com",
+            storageBucket: "eddycafe-8d9d5.firebasestorage.app",
             messagingSenderId: "153575110904",
             appId: "1:153575110904:web:44a0e07c5167527dc1230d",
             measurementId: "G-7SKW7ZE78Z"));

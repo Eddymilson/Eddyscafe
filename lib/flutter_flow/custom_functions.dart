@@ -15,3 +15,7 @@ import '/auth/firebase_auth/auth_util.dart';
 double? valorNegativo(double valor) {
   return valor * -1;
 }
+
+double mutiplicarpor100(double valor1) {
+  return valor1 * 100;
+}

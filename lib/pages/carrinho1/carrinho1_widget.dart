@@ -1,4 +1,6 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/stripe/payment_manager.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -382,8 +384,29 @@ class _Carrinho1WidgetState extends State<Carrinho1Widget> {
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 16.0, 0.0),
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('comprar pressed ...');
+                              onPressed: () async {
+                                final paymentResponse =
+                                    await processStripePayment(
+                                  context,
+                                  amount: FFAppState().somaCarrinho.round(),
+                                  currency: 'BRL',
+                                  customerEmail: currentUserEmail,
+                                  customerName: currentUserDisplayName,
+                                  description: 'App eddyscafe',
+                                  allowGooglePay: false,
+                                  allowApplePay: false,
+                                );
+                                if (paymentResponse.paymentId == null &&
+                                    paymentResponse.errorMessage != null) {
+                                  showSnackbar(
+                                    context,
+                                    'Error: ${paymentResponse.errorMessage}',
+                                  );
+                                }
+                                _model.pagamento =
+                                    paymentResponse.paymentId ?? '';
+
+                                safeSetState(() {});
                               },
                               text: 'comprar',
                               options: FFButtonOptions(
