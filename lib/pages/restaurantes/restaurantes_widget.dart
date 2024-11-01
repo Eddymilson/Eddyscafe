@@ -1,6 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -59,23 +58,6 @@ class _RestaurantesWidgetState extends State<RestaurantesWidget> {
                     ),
               ),
               actions: [
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
-                  child: FlutterFlowIconButton(
-                    borderColor: Colors.transparent,
-                    borderRadius: 30.0,
-                    borderWidth: 1.0,
-                    buttonSize: 30.0,
-                    icon: const Icon(
-                      Icons.shopping_cart_outlined,
-                      color: Color(0xFFB0A455),
-                      size: 30.0,
-                    ),
-                    onPressed: () async {
-                      context.pushNamed('carrinho1');
-                    },
-                  ),
-                ),
                 Align(
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: FFButtonWidget(

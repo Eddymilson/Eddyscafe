@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'cadastro_model.dart';
@@ -1436,13 +1435,19 @@ class _CadastroWidgetState extends State<CadastroWidget>
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          image: const DecorationImage(
+                          image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: CachedNetworkImageProvider(
-                              'https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80',
-                            ),
+                            image: Image.network(
+                              'https://images.unsplash.com/photo-1495862433577-132cf20d7902?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNHx8Y29mZmVlfGVufDB8fHx8MTczMDM1NjQzNHww&ixlib=rb-4.0.3&q=80&w=1080',
+                            ).image,
                           ),
-                          borderRadius: BorderRadius.circular(0.0),
+                          borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(0.0),
+                            bottomRight: Radius.circular(0.0),
+                            topLeft: Radius.circular(0.0),
+                            topRight: Radius.circular(0.0),
+                          ),
+                          shape: BoxShape.rectangle,
                         ),
                       ),
                     ),

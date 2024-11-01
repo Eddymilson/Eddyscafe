@@ -246,7 +246,7 @@ class _Carrinho1WidgetState extends State<Carrinho1Widget> {
                                                         ),
                                                       ),
                                                       Text(
-                                                        'RS${containerPratosRecord.preco.toString()}',
+                                                        'R\$:${containerPratosRecord.preco.toString()}',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -388,7 +388,10 @@ class _Carrinho1WidgetState extends State<Carrinho1Widget> {
                                 final paymentResponse =
                                     await processStripePayment(
                                   context,
-                                  amount: FFAppState().somaCarrinho.round(),
+                                  amount: functions
+                                      .mutiplicarpor100(
+                                          FFAppState().somaCarrinho)
+                                      .round(),
                                   currency: 'BRL',
                                   customerEmail: currentUserEmail,
                                   customerName: currentUserDisplayName,
