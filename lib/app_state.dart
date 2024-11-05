@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
@@ -15,12 +16,19 @@ class FFAppState extends ChangeNotifier {
     _instance = FFAppState._internal();
   }
 
-  Future initializePersistedState() async {}
+  Future initializePersistedState() async {
+    prefs = await SharedPreferences.getInstance();
+    _safeInit(() {
+      _Contador = prefs.getInt('ff_Contador') ?? _Contador;
+    });
+  }
 
   void update(VoidCallback callback) {
     callback();
     notifyListeners();
   }
+
+  late SharedPreferences prefs;
 
   List<DocumentReference> _carrinho = [];
   List<DocumentReference> get carrinho => _carrinho;
@@ -56,4 +64,23 @@ class FFAppState extends ChangeNotifier {
   set somaCarrinho(double value) {
     _somaCarrinho = value;
   }
+
+  int _Contador = 0;
+  int get Contador => _Contador;
+  set Contador(int value) {
+    _Contador = value;
+    prefs.setInt('ff_Contador', value);
+  }
+}
+
+void _safeInit(Function() initializeField) {
+  try {
+    initializeField();
+  } catch (_) {}
+}
+
+Future _safeInitAsync(Function() initializeField) async {
+  try {
+    await initializeField();
+  } catch (_) {}
 }

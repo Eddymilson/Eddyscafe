@@ -246,7 +246,7 @@ class _Carrinho1WidgetState extends State<Carrinho1Widget> {
                                                         ),
                                                       ),
                                                       Text(
-                                                        'R\$:${containerPratosRecord.preco.toString()}',
+                                                        'R\$${containerPratosRecord.preco.toString()}',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -299,6 +299,9 @@ class _Carrinho1WidgetState extends State<Carrinho1Widget> {
                                                         .removeFromCarrinho(
                                                             containerPratosRecord
                                                                 .reference);
+                                                    FFAppState().Contador =
+                                                        FFAppState().Contador +
+                                                            -1;
                                                     safeSetState(() {});
                                                     FFAppState()
                                                         .somaCarrinho = FFAppState()
@@ -358,7 +361,7 @@ class _Carrinho1WidgetState extends State<Carrinho1Widget> {
                                         .override(
                                           fontFamily: 'Inter',
                                           color: const Color(0xFFB0A455),
-                                          fontSize: 25.0,
+                                          fontSize: 35.0,
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -367,11 +370,11 @@ class _Carrinho1WidgetState extends State<Carrinho1Widget> {
                               Text(
                                 'R\$${FFAppState().somaCarrinho.toString()}',
                                 style: FlutterFlowTheme.of(context)
-                                    .displaySmall
+                                    .titleSmall
                                     .override(
                                       fontFamily: 'Inter Tight',
                                       color: const Color(0xFFB0A455),
-                                      fontSize: 25.0,
+                                      fontSize: 30.0,
                                       letterSpacing: 0.0,
                                     ),
                               ),

@@ -638,7 +638,7 @@ class _CadastroWidgetState extends State<CadastroWidget>
                                                                       0.0,
                                                                       0.0),
                                                           color:
-                                                              const Color(0xFF352727),
+                                                              const Color(0xFF2C2222),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)

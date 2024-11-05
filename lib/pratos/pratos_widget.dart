@@ -77,13 +77,13 @@ class _PratosWidgetState extends State<PratosWidget> {
                   backgroundColor: const Color(0xFF2C2222),
                   automaticallyImplyLeading: false,
                   leading: FlutterFlowIconButton(
-                    borderRadius: 30.0,
+                    borderRadius: 35.0,
                     borderWidth: 1.0,
                     buttonSize: 60.0,
                     icon: const Icon(
                       Icons.chevron_left,
                       color: Color(0xFFB0A455),
-                      size: 24.0,
+                      size: 35.0,
                     ),
                     onPressed: () async {
                       context.safePop();
@@ -104,7 +104,7 @@ class _PratosWidgetState extends State<PratosWidget> {
                                 .override(
                                   fontFamily: 'Inter Tight',
                                   color: const Color(0xFFB0A455),
-                                  fontSize: 30.0,
+                                  fontSize: 35.0,
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -118,13 +118,13 @@ class _PratosWidgetState extends State<PratosWidget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                       child: FlutterFlowIconButton(
                         borderColor: Colors.transparent,
-                        borderRadius: 30.0,
+                        borderRadius: 35.0,
                         borderWidth: 1.0,
                         buttonSize: 60.0,
                         icon: const Icon(
                           Icons.location_history,
                           color: Color(0xFFB0A455),
-                          size: 30.0,
+                          size: 35.0,
                         ),
                         onPressed: () async {
                           context.pushNamed('cadastro');
@@ -363,7 +363,7 @@ class _PratosWidgetState extends State<PratosWidget> {
                                                             .fromSTEB(0.0, 12.0,
                                                                 4.0, 8.0),
                                                     child: Text(
-                                                      'R\$:${listViewPratosRecord.preco.toString()}',
+                                                      'R\$${listViewPratosRecord.preco.toString()}',
                                                       textAlign: TextAlign.end,
                                                       style: FlutterFlowTheme
                                                               .of(context)
