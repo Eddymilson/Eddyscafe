@@ -107,53 +107,59 @@ class _ProdutosWidgetState extends State<ProdutosWidget> {
                 ),
                 actions: [
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          safeSetState(() {});
-                        },
-                        child: badges.Badge(
-                          badgeContent: Text(
-                            formatNumber(
-                              FFAppState().Contador,
-                              formatType: FormatType.decimal,
-                              decimalType: DecimalType.automatic,
-                            ),
-                            textAlign: TextAlign.start,
-                            style: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Inter Tight',
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  letterSpacing: 0.0,
-                                ),
+                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        safeSetState(() {});
+                      },
+                      child: badges.Badge(
+                        badgeContent: Text(
+                          FFAppState().Contador.toString(),
+                          textAlign: TextAlign.start,
+                          style:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                            fontFamily: 'Inter Tight',
+                            color: Colors.white,
+                            fontSize: 15.0,
+                            letterSpacing: 0.0,
+                            shadows: [
+                              Shadow(
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                offset: const Offset(2.0, 2.0),
+                                blurRadius: 2.0,
+                              )
+                            ],
                           ),
-                          showBadge: true,
-                          shape: badges.BadgeShape.circle,
-                          badgeColor: const Color(0xFFCC132E),
-                          elevation: 1.0,
-                          padding: const EdgeInsets.all(2.0),
-                          position: badges.BadgePosition.topEnd(),
-                          animationType: badges.BadgeAnimationType.scale,
-                          toAnimate: false,
-                          child: FlutterFlowIconButton(
-                            buttonSize: 60.0,
-                            icon: const Icon(
-                              Icons.shopping_cart_outlined,
-                              color: Color(0xFFB0A455),
-                              size: 35.0,
+                        ),
+                        showBadge: true,
+                        shape: badges.BadgeShape.circle,
+                        badgeColor: const Color(0xFFCC132E),
+                        elevation: 1.0,
+                        padding: const EdgeInsets.all(10.0),
+                        position: badges.BadgePosition.topStart(),
+                        animationType: badges.BadgeAnimationType.scale,
+                        toAnimate: false,
+                        child: Align(
+                          alignment: const AlignmentDirectional(1.0, 0.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 10.0, 0.0),
+                            child: FlutterFlowIconButton(
+                              buttonSize: 60.0,
+                              icon: const Icon(
+                                Icons.shopping_cart_outlined,
+                                color: Color(0xFFB0A455),
+                                size: 35.0,
+                              ),
+                              onPressed: () async {
+                                context.pushNamed('carrinho1');
+                              },
                             ),
-                            onPressed: () async {
-                              context.pushNamed('carrinho1');
-                            },
                           ),
                         ),
                       ),
@@ -185,7 +191,7 @@ class _ProdutosWidgetState extends State<ProdutosWidget> {
                               produtosPratosRecord.img,
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 230.0,
-                              fit: BoxFit.cover,
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
@@ -197,6 +203,16 @@ class _ProdutosWidgetState extends State<ProdutosWidget> {
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            Text(
+                              produtosPratosRecord.desc,
+                              style: FlutterFlowTheme.of(context)
+                                  .labelLarge
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    color: const Color(0xFFB0A455),
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 8.0),
@@ -210,16 +226,6 @@ class _ProdutosWidgetState extends State<ProdutosWidget> {
                                       letterSpacing: 0.0,
                                     ),
                               ),
-                            ),
-                            Text(
-                              produtosPratosRecord.desc,
-                              style: FlutterFlowTheme.of(context)
-                                  .labelLarge
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: const Color(0xFFB0A455),
-                                    letterSpacing: 0.0,
-                                  ),
                             ),
                           ],
                         ),
