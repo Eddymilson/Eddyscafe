@@ -107,7 +107,7 @@ class _ProdutosWidgetState extends State<ProdutosWidget> {
                 ),
                 actions: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: const AlignmentDirectional(1.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -124,13 +124,12 @@ class _ProdutosWidgetState extends State<ProdutosWidget> {
                               FlutterFlowTheme.of(context).titleSmall.override(
                             fontFamily: 'Inter Tight',
                             color: Colors.white,
-                            fontSize: 15.0,
+                            fontSize: 20.0,
                             letterSpacing: 0.0,
                             shadows: [
-                              Shadow(
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                offset: const Offset(2.0, 2.0),
+                              const Shadow(
+                                color: Color(0xFF0E0D0D),
+                                offset: Offset(2.0, 2.0),
                                 blurRadius: 2.0,
                               )
                             ],
@@ -139,8 +138,9 @@ class _ProdutosWidgetState extends State<ProdutosWidget> {
                         showBadge: true,
                         shape: badges.BadgeShape.circle,
                         badgeColor: const Color(0xFFCC132E),
-                        elevation: 1.0,
-                        padding: const EdgeInsets.all(10.0),
+                        elevation: 0.0,
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                         position: badges.BadgePosition.topStart(),
                         animationType: badges.BadgeAnimationType.scale,
                         toAnimate: false,

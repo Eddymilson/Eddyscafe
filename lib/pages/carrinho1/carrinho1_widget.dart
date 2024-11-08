@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'carrinho1_model.dart';
@@ -341,6 +342,34 @@ class _Carrinho1WidgetState extends State<Carrinho1Widget> {
                                       letterSpacing: 0.0,
                                     ),
                               ),
+                              Expanded(
+                                child: Align(
+                                  alignment: const AlignmentDirectional(1.0, 0.0),
+                                  child: badges.Badge(
+                                    badgeContent: Text(
+                                      FFAppState().Contador.toString(),
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Inter Tight',
+                                            color: const Color(0xFFB0A455),
+                                            fontSize: 20.0,
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                    showBadge: true,
+                                    shape: badges.BadgeShape.circle,
+                                    badgeColor: const Color(0xFF2C2222),
+                                    elevation: 4.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 8.0, 8.0, 8.0),
+                                    position: badges.BadgePosition.topEnd(),
+                                    animationType:
+                                        badges.BadgeAnimationType.scale,
+                                    toAnimate: false,
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -359,11 +388,18 @@ class _Carrinho1WidgetState extends State<Carrinho1Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Inter',
-                                          color: const Color(0xFFB0A455),
-                                          fontSize: 35.0,
-                                          letterSpacing: 0.0,
-                                        ),
+                                      fontFamily: 'Inter',
+                                      color: const Color(0xFFB0A455),
+                                      fontSize: 35.0,
+                                      letterSpacing: 0.0,
+                                      shadows: [
+                                        const Shadow(
+                                          color: Colors.black,
+                                          offset: Offset(2.0, 2.0),
+                                          blurRadius: 2.0,
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),
@@ -372,11 +408,18 @@ class _Carrinho1WidgetState extends State<Carrinho1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Inter Tight',
-                                      color: const Color(0xFFB0A455),
-                                      fontSize: 30.0,
-                                      letterSpacing: 0.0,
-                                    ),
+                                  fontFamily: 'Inter Tight',
+                                  color: const Color(0xFFB0A455),
+                                  fontSize: 30.0,
+                                  letterSpacing: 0.0,
+                                  shadows: [
+                                    const Shadow(
+                                      color: Color(0xFF060606),
+                                      offset: Offset(2.0, 2.0),
+                                      blurRadius: 2.0,
+                                    )
+                                  ],
+                                ),
                               ),
                             ],
                           ),
